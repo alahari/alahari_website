@@ -1,0 +1,7 @@
+version: "Apple Swift version 5.6.1 (swiftlang-5.6.0.323.66 clang-1316.0.20.12)"
+options: "30773877af673ad64ab80f2e2d11ee9a24eeee8f268b0aacf6b33343a52cc033"
+build_start_time: [1683650908, 637738943]
+build_end_time: [1683650911, 618359088]
+inputs:
+  "/Users/venkialahari/.pub-cache/hosted/pub.dev/path_provider_foundation-2.2.2/macos/Classes/PathProviderPlugin.swift": [1683483171, 757929325]
+  "/Users/venkialahari/.pub-cache/hosted/pub.dev/path_provider_foundation-2.2.2/macos/Classes/messages.g.swift": [1683483171, 758188724]
