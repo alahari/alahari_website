@@ -70,61 +70,6 @@ class ContactPage extends StatelessWidget {
               const SizedBox(
                 height: 30,
               ),
-              Row(
-                children: [
-                  Expanded(
-                    child: ListTile(
-                      leading: CircleAvatar(
-                        // backgroundImage: AssetImage("assets/images/venki.jpeg"),
-                        //  radius: 40,
-                        child: Container(
-                          decoration: const BoxDecoration(
-                            shape: BoxShape.circle,
-                            image: DecorationImage(
-                              image:
-                                  AssetImage('assets/images/sunil_garu.jpeg'),
-                              fit: BoxFit
-                                  .scaleDown, // Add fit property to adjust image display
-                            ),
-                          ),
-                        ),
-                      ),
-                      title: const Text(
-                        "Sunil Dutt Gurrapu",
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      subtitle: Text("Chief Marketing Officer"),
-                    ),
-                  ),
-                  Expanded(
-                    child: ListTile(
-                      leading: CircleAvatar(
-                        // backgroundImage: AssetImage("assets/images/venki.jpeg"),
-                        //  radius: 40,
-                        child: Container(
-                          decoration: const BoxDecoration(
-                            shape: BoxShape.circle,
-                            image: DecorationImage(
-                              image: AssetImage(''),
-                              fit: BoxFit
-                                  .scaleDown, // Add fit property to adjust image display
-                            ),
-                          ),
-                        ),
-                      ),
-                      title: const Text(
-                        "Rajesh Kumar Rapur",
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      subtitle: Text("Chief Technical Architect"),
-                    ),
-                  ),
-                ],
-              ),
               //  const Footer()
               // Footer
               SizedBox(height: 100,),
