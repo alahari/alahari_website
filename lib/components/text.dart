@@ -78,9 +78,9 @@ class TextBlockquote extends StatelessWidget {
   }
 }
 
-ButtonStyle? menuButtonStyle = TextButton.styleFrom(
-    backgroundColor: Colors.transparent,
-    onSurface: null,
-    primary: textSecondary,
-    textStyle: buttonTextStyle,
-    padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16));
+final ButtonStyle menuButtonStyle = TextButton.styleFrom(
+  backgroundColor: Colors.transparent,
+  foregroundColor: textSecondary,
+  textStyle: buttonTextStyle,
+  padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+);
