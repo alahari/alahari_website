@@ -6,155 +6,125 @@ class ContactPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SingleChildScrollView(
-        child: Container(
-          margin: const EdgeInsets.symmetric(horizontal: 32),
-          child: Column(
-            children: <Widget>[
-              MenuBar(),
-              Row(
-                children: [
-                  Expanded(
-                    child: ListTile(
-                      leading: CircleAvatar(
-                        // backgroundImage: AssetImage("assets/images/venki.jpeg"),
-                        //  radius: 40,
-                        child: Container(
-                          decoration: const BoxDecoration(
-                            shape: BoxShape.circle,
-                            image: DecorationImage(
-                              image: AssetImage('assets/images/venki.jpeg'),
-                              fit: BoxFit
-                                  .scaleDown, // Add fit property to adjust image display
-                            ),
-                          ),
-                        ),
-                      ),
-                      title: Text(
-                        "Venkateswarlu Alahari",
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      subtitle: Text("Director"),
-                    ),
-                  ),
-                  Expanded(
-                    child: ListTile(
-                      leading: CircleAvatar(
-                        // backgroundImage: AssetImage("assets/images/venki.jpeg"),
-                        //  radius: 40,
-                        child: Container(
-                          decoration: const BoxDecoration(
-                            shape: BoxShape.circle,
-                            image: DecorationImage(
-                              image: AssetImage('assets/images/leela.jpeg'),
-                              fit: BoxFit
-                                  .scaleDown, // Add fit property to adjust image display
-                            ),
-                          ),
-                        ),
-                      ),
-                      title: Text(
-                        "Leelavathi Alahari",
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      subtitle: Text("Director"),
-                    ),
-                  ),
-                ],
+    return PageScaffold(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: const [
+          MenuBar(),
+          SizedBox(height: 28),
+          GlassPanel(
+            child: SectionHeading(
+              eyebrow: 'Contact',
+              title: 'Meet the people building the next layer of Alahari.',
+              description:
+                  'The team combines leadership, technical depth, and operational clarity. Reach out for partnerships, charger deployment discussions, or future-focused collaboration.',
+            ),
+          ),
+          SizedBox(height: 28),
+          _LeadershipGrid(),
+          SizedBox(height: 28),
+          ProfileHighlight(
+            imagePath: 'assets/images/mahesh_babu.jpeg',
+            name: 'Nemalikanti Mahesh Babu',
+            role: 'Chief Technology Officer (CTO)',
+            bio:
+                'Mr. Mahesh Babu brings robust technical leadership with 12 years of experience in the electrical field. For the past 3 years, he has specialized specifically in Electric Vehicle chargers, gaining deep insights into the evolving technology. His expertise covers the complete spectrum of end-to-end charging station installation and management, ensuring technical reliability in all our deployments.',
+          ),
+          SizedBox(height: 28),
+          _ContactDetailsSection(),
+          SizedBox(height: 28),
+          Footer(),
+        ],
+      ),
+    );
+  }
+}
+
+class _LeadershipGrid extends StatelessWidget {
+  const _LeadershipGrid();
+
+  @override
+  Widget build(BuildContext context) {
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        if (constraints.maxWidth < 860) {
+          return const Column(
+            children: [
+              PersonCard(
+                imagePath: 'assets/images/venki.jpeg',
+                name: 'Venkateswarlu Alahari',
+                role: 'Director',
+                bio:
+                    'Guides the company with a practical leadership style focused on dependable execution, long-term relationships, and grounded growth.',
               ),
-              const SizedBox(
-                height: 30,
-              ),
-              Container(
-                width: double.infinity,
-                padding: const EdgeInsets.all(24),
-                decoration: BoxDecoration(
-                  color: const Color(0xFFF8F8F8),
-                  borderRadius: BorderRadius.circular(12),
-                ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        ClipRRect(
-                          borderRadius: BorderRadius.circular(12),
-                          child: Image.asset(
-                            'assets/images/mahesh_babu.jpeg',
-                            width: 140,
-                            height: 180,
-                            fit: BoxFit.cover,
-                          ),
-                        ),
-                        const SizedBox(width: 24),
-                        const Expanded(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                'Nemalikanti Mahesh Babu',
-                                style: TextStyle(
-                                  fontSize: 22,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                              SizedBox(height: 8),
-                              Text(
-                                'Chief Technology Officer (CTO)',
-                                style: TextStyle(
-                                  fontSize: 16,
-                                  color: Colors.black54,
-                                  fontWeight: FontWeight.w600,
-                                ),
-                              ),
-                              SizedBox(height: 16),
-                              Text(
-                                'Mr. Mahesh Babu brings robust technical leadership with 12 years of experience in the electrical field. For the past 3 years, he has specialized specifically in Electric Vehicle chargers, gaining deep insights into the evolving technology. His expertise covers the complete spectrum of end-to-end charging station installation and management, ensuring technical reliability in all our deployments.',
-                                style: TextStyle(
-                                  fontSize: 15,
-                                  height: 1.6,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-              ),
-              const SizedBox(height: 40),
-              //  const Footer()
-              // Footer
-              SizedBox(height: 100,),
-              Row(
-                children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: const [
-                      Text(
-                        'Address: Alahari Enterprises',
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      Text('                  H NO 4-154/28'),
-                      Text('                  LAXMINAGAR COLONY, BANDLAGUDA JAGIR, HYDERABAD - 500086'),
-                    ],
-                  ),
-                ],
+              SizedBox(height: 18),
+              PersonCard(
+                imagePath: 'assets/images/leela.jpeg',
+                name: 'Leelavathi Alahari',
+                role: 'Director',
+                bio:
+                    'Brings steady organizational leadership and helps shape a company culture rooted in trust, care, and disciplined delivery.',
               ),
             ],
-          ),
+          );
+        }
+
+        return const Row(
+          children: [
+            Expanded(
+              child: PersonCard(
+                imagePath: 'assets/images/venki.jpeg',
+                name: 'Venkateswarlu Alahari',
+                role: 'Director',
+                bio:
+                    'Guides the company with a practical leadership style focused on dependable execution, long-term relationships, and grounded growth.',
+              ),
+            ),
+            SizedBox(width: 18),
+            Expanded(
+              child: PersonCard(
+                imagePath: 'assets/images/leela.jpeg',
+                name: 'Leelavathi Alahari',
+                role: 'Director',
+                bio:
+                    'Brings steady organizational leadership and helps shape a company culture rooted in trust, care, and disciplined delivery.',
+              ),
+            ),
+          ],
+        );
+      },
+    );
+  }
+}
+
+class _ContactDetailsSection extends StatelessWidget {
+  const _ContactDetailsSection();
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: const [
+        SectionHeading(
+          eyebrow: 'Reach us',
+          title: 'Based in Hyderabad, ready to talk.',
+          description:
+              'Use this page as the relationship layer of the brand: a place that feels welcoming, credible, and easy to approach.',
         ),
-      ),
-      backgroundColor: Colors.white,
+        SizedBox(height: 22),
+        ContactInfoCard(
+          title: 'Office',
+          value: 'Alahari Enterprises',
+          icon: Icons.apartment_rounded,
+        ),
+        SizedBox(height: 16),
+        ContactInfoCard(
+          title: 'Address',
+          value:
+              'H No 4-154/28, Laxminagar Colony, Bandlaguda Jagir, Hyderabad - 500086',
+          icon: Icons.location_on_rounded,
+        ),
+      ],
     );
   }
 }

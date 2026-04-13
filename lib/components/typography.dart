@@ -2,26 +2,77 @@ import 'package:flutter/painting.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:minimal/components/color.dart';
 
-// Simple
-TextStyle headlineTextStyle = GoogleFonts.montserrat(
-    textStyle: const TextStyle(
-        fontSize: 26,
-        color: textPrimary,
-        letterSpacing: 1.5,
-        fontWeight: FontWeight.w300));
+TextStyle heroTextStyle = GoogleFonts.spaceGrotesk(
+  textStyle: const TextStyle(
+    fontSize: 54,
+    height: 1.02,
+    color: textPrimary,
+    fontWeight: FontWeight.w700,
+    letterSpacing: -1.6,
+  ),
+);
 
-TextStyle headlineSecondaryTextStyle = GoogleFonts.montserrat(
-    textStyle: const TextStyle(
-        fontSize: 20, color: textPrimary, fontWeight: FontWeight.w300));
+TextStyle headlineTextStyle = GoogleFonts.spaceGrotesk(
+  textStyle: const TextStyle(
+    fontSize: 34,
+    height: 1.1,
+    color: textPrimary,
+    fontWeight: FontWeight.w700,
+    letterSpacing: -0.8,
+  ),
+);
 
-TextStyle subtitleTextStyle = GoogleFonts.openSans(
-    textStyle: const TextStyle(fontSize: 14, color: textSecondary, letterSpacing: 1));
+TextStyle headlineSecondaryTextStyle = GoogleFonts.spaceGrotesk(
+  textStyle: const TextStyle(
+    fontSize: 24,
+    height: 1.2,
+    color: textPrimary,
+    fontWeight: FontWeight.w700,
+    letterSpacing: -0.4,
+  ),
+);
 
-TextStyle bodyTextStyle = GoogleFonts.openSans(
-    textStyle: const TextStyle(fontSize: 14, color: textPrimary));
+TextStyle subtitleTextStyle = GoogleFonts.plusJakartaSans(
+  textStyle: const TextStyle(
+    fontSize: 15,
+    height: 1.6,
+    color: textSecondary,
+    fontWeight: FontWeight.w500,
+  ),
+);
 
-TextStyle buttonTextStyle = GoogleFonts.montserrat(
-    textStyle: const TextStyle(fontSize: 14, color: textPrimary, letterSpacing: 1));
+TextStyle bodyTextStyle = GoogleFonts.plusJakartaSans(
+  textStyle: const TextStyle(
+    fontSize: 15,
+    height: 1.75,
+    color: textPrimary,
+    fontWeight: FontWeight.w400,
+  ),
+);
 
-// Advanced
-// TODO: Add additional text styles.
+TextStyle buttonTextStyle = GoogleFonts.spaceGrotesk(
+  textStyle: const TextStyle(
+    fontSize: 14,
+    color: textPrimary,
+    fontWeight: FontWeight.w700,
+    letterSpacing: 0.3,
+  ),
+);
+
+TextStyle eyebrowTextStyle = GoogleFonts.spaceGrotesk(
+  textStyle: const TextStyle(
+    fontSize: 12,
+    color: accent,
+    fontWeight: FontWeight.w700,
+    letterSpacing: 1.6,
+  ),
+);
+
+TextStyle captionTextStyle = GoogleFonts.plusJakartaSans(
+  textStyle: const TextStyle(
+    fontSize: 13,
+    height: 1.5,
+    color: textSecondary,
+    fontWeight: FontWeight.w500,
+  ),
+);
