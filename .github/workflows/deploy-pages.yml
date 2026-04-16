@@ -33,10 +33,7 @@ jobs:
         run: flutter pub get
 
       - name: Build web app
-        run: flutter build web --base-href /
-
-      - name: Add custom domain
-        run: cp CNAME build/web/CNAME
+        run: flutter build web --base-href /alahari_website/
 
       - name: Disable Jekyll
         run: touch build/web/.nojekyll
