@@ -33,7 +33,7 @@ jobs:
         run: flutter pub get
 
       - name: Build web app
-        run: flutter build web --base-href /alahari_website/
+        run: flutter build web --base-href /
 
       - name: Disable Jekyll
         run: touch build/web/.nojekyll
