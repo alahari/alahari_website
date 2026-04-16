@@ -53,7 +53,7 @@ class _LeadershipGrid extends StatelessWidget {
               PersonCard(
                 imagePath: 'assets/images/venki.jpeg',
                 name: 'Venkateswarlu Alahari',
-                role: 'Director',
+                role: 'Founder',
                 bio:
                     'Guides the company with a practical leadership style focused on dependable execution, long-term relationships, and grounded growth.',
               ),
