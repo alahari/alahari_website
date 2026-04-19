@@ -494,7 +494,8 @@ List<Widget> authorSection({String? imageUrl, String? name, String? bio}) {
           final avatar = imageUrl == null
               ? const SizedBox.shrink()
               : Container(
-                  margin: EdgeInsets.only(right: stacked ? 0 : 22, bottom: stacked ? 18 : 0),
+                  margin: EdgeInsets.only(
+                      right: stacked ? 0 : 22, bottom: stacked ? 18 : 0),
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(22),
                     child: Image.asset(
@@ -525,7 +526,8 @@ List<Widget> authorSection({String? imageUrl, String? name, String? bio}) {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    if (name != null) Text(name, style: headlineSecondaryTextStyle),
+                    if (name != null)
+                      Text(name, style: headlineSecondaryTextStyle),
                     if (name != null) const SizedBox(height: 10),
                     if (bio != null) Text(bio, style: bodyTextStyle),
                   ],
@@ -650,7 +652,8 @@ class Footer extends StatelessWidget {
             crossAxisAlignment:
                 stacked ? CrossAxisAlignment.start : CrossAxisAlignment.end,
             children: [
-              Text('Hyderabad, India', style: buttonTextStyle.copyWith(color: accent)),
+              Text('Hyderabad, India',
+                  style: buttonTextStyle.copyWith(color: accent)),
               const SizedBox(height: 8),
               Text(
                 'Built for the web, ready for the field.',
@@ -726,10 +729,12 @@ class ListItem extends StatelessWidget {
           return Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Expanded(flex: 6, child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: _buildTextChildren(context),
-              )),
+              Expanded(
+                  flex: 6,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: _buildTextChildren(context),
+                  )),
               const SizedBox(width: 26),
               if (imageUrl != null) Expanded(flex: 5, child: image),
             ],
@@ -874,22 +879,20 @@ class MenuBar extends StatelessWidget {
             child: Row(
               mainAxisSize: MainAxisSize.min,
               children: [
-                ClipRRect(
-                  borderRadius: BorderRadius.circular(16),
-                  child: const Image(
-                    image: AssetImage('assets/images/ae.jpg'),
-                    width: 64,
-                    height: 64,
-                    fit: BoxFit.cover,
-                  ),
-                ),
+                const ZenChargeMark(),
                 const SizedBox(width: 14),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text('Alahari', style: headlineSecondaryTextStyle),
                     Text(
-                      'EV infrastructure studio',
+                      'ZEN CHARGE',
+                      style: headlineSecondaryTextStyle.copyWith(
+                        color: accent,
+                        letterSpacing: 1.2,
+                      ),
+                    ),
+                    Text(
+                      'EV charging infrastructure',
                       style: captionTextStyle,
                     ),
                   ],
@@ -924,6 +927,80 @@ class MenuBar extends StatelessWidget {
             ],
           );
         },
+      ),
+    );
+  }
+}
+
+class ZenChargeMark extends StatelessWidget {
+  const ZenChargeMark({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 70,
+      height: 70,
+      decoration: BoxDecoration(
+        color: panelBackground,
+        borderRadius: BorderRadius.circular(20),
+        border: Border.all(color: borderColor),
+        boxShadow: const [
+          BoxShadow(
+            color: shadowColor,
+            blurRadius: 16,
+            offset: Offset(0, 8),
+          ),
+        ],
+      ),
+      child: Stack(
+        alignment: Alignment.center,
+        children: [
+          Positioned(
+            top: 9,
+            child: Text(
+              'ZEN',
+              style: GoogleFonts.spaceGrotesk(
+                textStyle: const TextStyle(
+                  color: accent,
+                  fontSize: 15,
+                  fontWeight: FontWeight.w800,
+                  letterSpacing: 1.5,
+                ),
+              ),
+            ),
+          ),
+          const Positioned(
+            top: 26,
+            child: Icon(
+              Icons.electric_bolt_rounded,
+              color: accentBright,
+              size: 25,
+            ),
+          ),
+          Positioned(
+            bottom: 9,
+            child: Text(
+              'CHARGE',
+              style: GoogleFonts.spaceGrotesk(
+                textStyle: const TextStyle(
+                  color: Color(0xFFC93A32),
+                  fontSize: 11,
+                  fontWeight: FontWeight.w900,
+                  letterSpacing: 0.5,
+                ),
+              ),
+            ),
+          ),
+          const Positioned(
+            right: 10,
+            top: 30,
+            child: Icon(
+              Icons.electric_car_rounded,
+              color: Color(0xFFC93A32),
+              size: 16,
+            ),
+          ),
+        ],
       ),
     );
   }

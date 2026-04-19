@@ -1,14 +1,20 @@
 {
-    "name": "Minimal",
-    "short_name": "Minimal",
-    "start_url": ".",
+    "name": "Zen Charge | EV Charging Infrastructure",
+    "short_name": "Zen Charge",
+    "start_url": "/",
     "display": "standalone",
-    "background_color": "#FFFFFF",
-    "theme_color": "#FFFFFF",
-    "description": "A minimalistic Flutter website template for blogs and portfolios.",
+    "background_color": "#F4EFE7",
+    "theme_color": "#0E6B57",
+    "description": "Zen Charge by Alahari Enterprises designs and manages reliable EV charging infrastructure, charger installation, and charging station operations.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
+        {
+            "src": "icons/zen-charge-icon.svg",
+            "sizes": "any",
+            "type": "image/svg+xml",
+            "purpose": "any"
+        },
         {
             "src": "icons/Icon-192.png",
             "sizes": "192x192",

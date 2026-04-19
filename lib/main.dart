@@ -15,6 +15,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      title: 'Zen Charge | EV Charging Infrastructure',
       theme: ThemeData(
         useMaterial3: true,
         scaffoldBackgroundColor: appBackground,
@@ -58,7 +59,7 @@ class MyApp extends StatelessWidget {
             case Routes.style:
               return const TypographyPage();
             case Routes.contact:
-              return const ContactPage();  
+              return const ContactPage();
             default:
               return const SizedBox.shrink();
           }
