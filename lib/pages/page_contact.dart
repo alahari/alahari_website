@@ -107,7 +107,7 @@ class _ContactDetailsSection extends StatelessWidget {
       children: const [
         SectionHeading(
           eyebrow: 'Reach us',
-          title: 'Based in Hyderabad, ready to talk.',
+          title: 'Based in Jupudi, ready to talk.',
           description:
               'Use this page as the relationship layer of the brand: a place that feels welcoming, credible, and easy to approach.',
         ),
@@ -121,8 +121,14 @@ class _ContactDetailsSection extends StatelessWidget {
         ContactInfoCard(
           title: 'Address',
           value:
-              'H No 4-154/28, Laxminagar Colony, Bandlaguda Jagir, Hyderabad - 500086',
+              'Zen Charge - Jupudi, Hyderabad, NH65 Highway, Vijayawada, Jupudi, Andhra Pradesh 521456',
           icon: Icons.location_on_rounded,
+        ),
+        SizedBox(height: 16),
+        ContactInfoCard(
+          title: 'Phone',
+          value: '+91 74166 70137 / +91 74161 70137',
+          icon: Icons.phone_rounded,
         ),
       ],
     );
